@@ -4,10 +4,24 @@
   font-weight: 400;
 }
 
+$color1: #ffffff;
+$color2: rgb(46, 46, 46);
+$color3: rgb(0, 104, 136);
+$bColor: #f2f4e6;
+$bColor-dark: #ba60fe;
+$bColor-light: #ce90ff;
+$text-dark: #70716b;
+$text-light: #c7c9bf;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  user-select: none;
+  background-color: $bColor;
 }
 
 a {
@@ -27,11 +41,51 @@ a {
 
 @import "admin-styles/mixin";
 
+@import "home";
+
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
 @import "admin-styles/chart";
 @import "admin-styles/dashboardapp";
 @import "admin-styles/mediaquery";
+
+/* Header */
+.header {
+  @include flex(row, space-between, center, 1.2rem);
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+
+  .header-menu {
+    @include flex(row, center, center, 1rem);
+  }
+  a {
+    letter-spacing: 2px;
+    &:hover {
+      color: $bColor-dark;
+    }
+  }
+  button {
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover {
+      color: $bColor-dark;
+    }
+  }
+  dialog {
+    border: 1px solid #ccc;
+    background-color: $bColor;
+    border-radius: 5px;
+    padding: 15px;
+    position: absolute;
+    left: calc(97% - 100px);
+    top: 12%;
+    > div {
+      @include flex(column, flex-start, center, 0.25rem);
+    }
+  }
+}
 
 .admin-container {
   @include grid(1fr 4fr, 2rem);
