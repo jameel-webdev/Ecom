@@ -7,7 +7,6 @@
   margin: 0 1.2rem;
 
   > section {
-    @include flex(row, space-between, center);
     background-color: $bColor-dark;
     padding: 1rem;
 
@@ -28,23 +27,13 @@
         }
       }
     }
-
-    .offer-card {
-      border: 1px solid;
-      background-color: $color1;
-      color: $color2;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-right: 1rem;
-    }
   }
-  > h1 {
-    padding: 0 1rem;
+  > h2 {
+    padding: 0 0.5rem;
     @include flex(row, space-between, center);
-  }
-
-  .findmore {
-    font-size: 1rem;
+    > a {
+      font-size: 1rem;
+    }
   }
 
   > main {
@@ -61,9 +50,9 @@
 }
 
 .productcard {
-  width: 17rem;
+  width: 15rem;
   height: 20rem;
-  // padding: 1rem;
+  margin: 0.5rem;
   flex: none;
   @include flex(column, flex-start, center, 4px);
   position: relative;
@@ -75,7 +64,7 @@
   }
 
   img {
-    @include square(calc(18.75rem - 3rem));
+    @include square(calc(15rem - 3rem));
     object-fit: cover;
     // margin: 1rem;
   }

@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const user = { _id: "123424", role: "admin" };
+const user = { _id: "", role: "" };
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -61,7 +61,10 @@ const Header = () => {
             </>
           ) : (
             <button className="">
-              <Link to="/login"> Create Account</Link>
+              <Link to="/login">
+                <FaSignInAlt />
+                Login
+              </Link>
             </button>
           )}
         </div>

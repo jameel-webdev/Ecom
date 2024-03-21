@@ -9,23 +9,14 @@ const Home = () => {
       <section>
         <div className="big">
           <p>Quick Delivery</p>
-          <h2>GET YOUR</h2>
           <h4>Gateway to Gadgets Galore.</h4>
-        </div>
-
-        <div className="offer-card">
-          <p>Special</p>
-          <p>Offers For You ! ! !</p>
-          <strong>CODE!@!$</strong>
         </div>
       </section>
 
-      <h1>
+      <h2>
         Latest Product
-        <Link className="findmore" to="/search">
-          More
-        </Link>
-      </h1>
+        <Link to="/search">More</Link>
+      </h2>
 
       <main>
         <ProductCard

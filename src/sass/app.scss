@@ -43,6 +43,7 @@ a {
 
 @import "home";
 @import "cart";
+@import "shipping";
 
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
@@ -59,7 +60,19 @@ a {
   .header-menu {
     @include flex(row, center, center, 1rem);
   }
+
+  > a:first-child {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $bColor-dark;
+  }
+
   a {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     letter-spacing: 2px;
     &:hover {
       color: $bColor-dark;
