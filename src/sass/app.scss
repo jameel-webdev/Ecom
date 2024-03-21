@@ -17,6 +17,7 @@ $text-light: #c7c9bf;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -44,6 +45,8 @@ a {
 @import "home";
 @import "cart";
 @import "shipping";
+@import "login";
+@import "search";
 
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
@@ -100,6 +103,12 @@ a {
     }
   }
 }
+
+// .heading {
+//   @include heading;
+//   margin: 1rem 0;
+//   text-align: center;
+// }
 
 .admin-container {
   @include grid(1fr 4fr, 2rem);

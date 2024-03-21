@@ -47,11 +47,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
 }
 
-@mixin btn($p: 0.5rem 1rem, $bg, $colr) {
+@mixin btn($p: 0.5rem 1rem, $bgColor: $bColor-dark, $color: $color1) {
   cursor: pointer;
   border: none;
   outline: none;
   padding: $p;
-  background-color: $bg;
-  color: $colr;
+  background-color: $bgColor;
+  color: $color;
 }
