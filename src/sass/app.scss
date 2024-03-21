@@ -54,6 +54,18 @@ a {
 @import "admin-styles/dashboardapp";
 @import "admin-styles/mediaquery";
 
+/*Orders*/
+.container {
+  max-width: 1367px;
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+  > h1 {
+    margin: 1rem 0;
+    text-align: left;
+  }
+}
+
 /* Header */
 .header {
   @include flex(row, space-between, center, 1.2rem);
