@@ -8,6 +8,7 @@ const Login = () => {
 
   return (
     <div className="login">
+      <section></section>
       <main>
         <h1 className="heading">Login</h1>
         <div>

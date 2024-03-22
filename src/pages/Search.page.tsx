@@ -17,7 +17,7 @@ const Search = () => {
       <aside>
         <h2>Filters</h2>
         <div>
-          <h4>Sort</h4>
+          <h4>Price</h4>
           <select value={sort} onChange={(e) => setSort(e.target.value)}>
             <option value="">Price filters</option>
             <option value="asc">Price (Low to High)</option>
@@ -47,7 +47,7 @@ const Search = () => {
         </div>
       </aside>
       <main>
-        <h1>Products</h1>
+        <h2>Products</h2>
         <input
           type="text"
           placeholder="Search by name..."

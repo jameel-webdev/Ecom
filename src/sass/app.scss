@@ -57,9 +57,10 @@ a {
 /*Orders*/
 .container {
   max-width: 1367px;
-  width: 100%;
+  width: calc(100vw - 4rem);
   margin: auto;
   overflow: auto;
+
   > h1 {
     margin: 1rem 0;
     text-align: left;
