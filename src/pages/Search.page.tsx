@@ -1,14 +1,26 @@
 import { useState } from "react";
 import ProductCard from "../components/ProductCard.component";
+import { useCategoriesQuery } from "../redux/api/productApi";
+import { CustomError } from "../types/api-types";
+import toast from "react-hot-toast";
 
 const Search = () => {
+  const {
+    data: categoriesResponse,
+    isLoading,
+    isError,
+    error,
+  } = useCategoriesQuery("");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
   const [maxPrice, setMaxPrice] = useState(100000);
   const [category, setCategory] = useState("");
   const [page, setPage] = useState(1);
   const addToCartHandler = () => {};
-
+  if (isError) {
+    const err = error as CustomError;
+    toast.error(err.data.message);
+  }
   const isNextPage = page < 4;
   const isPreviousPage = page > 1;
 
