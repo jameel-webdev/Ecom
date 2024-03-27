@@ -27,3 +27,38 @@ export type AllCategoriesResponse = {
   success: boolean;
   categories: string[];
 };
+
+export type SearchProductsResponse = {
+  success: boolean;
+  products: Product[];
+  totalPage: number;
+};
+
+export type SearchProductsRequest = {
+  price: number;
+  page: number;
+  category: string;
+  search: string;
+  sort: string;
+};
+
+export type ProductResponse = {
+  success: boolean;
+  singleProduct: Product;
+};
+
+export type NewProductRequest = {
+  id: string;
+  formData: FormData;
+};
+
+export type UpdateProductRequest = {
+  userId: string;
+  productId: string;
+  formData: FormData;
+};
+
+export type DeleteProductRequest = {
+  userId: string;
+  productId: string;
+};

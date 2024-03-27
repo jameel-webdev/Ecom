@@ -46,7 +46,6 @@ const Products = () => {
   const { user } = useSelector(
     (state: { userReducer: UserReducerInitialState }) => state.userReducer
   );
-  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
   const { data, isLoading, isError, error } = useAllProductsQuery(user?._id!);
   const [rows, setRows] = useState<DataType[]>([]);
 
@@ -67,7 +66,7 @@ const Products = () => {
       );
     }
   }, [data]);
-  console.log(rows);
+
   const Table = TableHOC<DataType>(
     columns,
     rows,
