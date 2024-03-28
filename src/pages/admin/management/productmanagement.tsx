@@ -8,7 +8,7 @@ import {
   useProductDetailsQuery,
   useUpdateProductMutation,
 } from "../../../redux/api/productApi";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { Skeleton } from "../../../components/Loader.component";
 import { responseToast } from "../../../utils/features";
 
@@ -18,7 +18,7 @@ const Productmanagement = () => {
   );
   const params = useParams();
   const navigate = useNavigate();
-  const { data, isLoading } = useProductDetailsQuery(params.id!);
+  const { data, isLoading, isError } = useProductDetailsQuery(params.id!);
 
   const { price, photo, category, stock, name } = data?.singleProduct || {
     photo: "",
@@ -90,6 +90,10 @@ const Productmanagement = () => {
       setCategoryUpdate(data.singleProduct.category);
     }
   }, [data]);
+
+  if (isError) {
+    return <Navigate to={"/404"} />;
+  }
 
   return (
     <div className="admin-container">
