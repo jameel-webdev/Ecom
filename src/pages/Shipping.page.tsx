@@ -1,11 +1,13 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { CartReducerInitialState } from "../types/reducer.types";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Shipping = () => {
-  const { cartItems } = useSelector(
+  const { cartItems, total } = useSelector(
     (state: { cartReducer: CartReducerInitialState }) => state.cartReducer
   );
   const navigate = useNavigate();
@@ -24,6 +26,27 @@ const Shipping = () => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+
+  const sumbitHandler = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_SERVER}/api/payment/create`,
+        { amount: total },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      navigate("/pay", {
+        state: data.clientSecret,
+      });
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong!");
+    }
+  };
   useEffect(() => {
     if (cartItems.length <= 0) return navigate("/cart");
   }, [cartItems, navigate]);
@@ -34,7 +57,7 @@ const Shipping = () => {
         <BiArrowBack />
       </button>
 
-      <form>
+      <form onSubmit={sumbitHandler}>
         <h1>Shipping Address</h1>
         <input
           required
