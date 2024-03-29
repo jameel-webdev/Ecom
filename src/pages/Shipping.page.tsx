@@ -99,7 +99,7 @@ const Shipping = () => {
           required
           type="number"
           placeholder="Pincode"
-          name="pinCode"
+          name="pincode"
           value={shippingInput.pincode}
           onChange={changeHandler}
         />
