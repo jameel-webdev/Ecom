@@ -8,7 +8,7 @@ import { CustomError } from "../types/api-types";
 import toast from "react-hot-toast";
 import { Skeleton } from "../components/Loader.component";
 import { CartItem } from "../types/types";
-import { addToCart } from "../redux/reducer/cardReducer";
+import { addToCart } from "../redux/reducer/cartReducer";
 import { useDispatch } from "react-redux";
 
 const Search = () => {

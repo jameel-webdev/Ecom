@@ -2,21 +2,23 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { CartReducerInitialState } from "../types/reducer.types";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { saveShippingInfo } from "../redux/reducer/cartReducer";
 
 const Shipping = () => {
   const { cartItems, total } = useSelector(
     (state: { cartReducer: CartReducerInitialState }) => state.cartReducer
   );
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [shippingInput, setShippingInput] = useState({
     address: "",
     city: "",
     state: "",
     country: "",
-    pinCode: "",
+    pincode: "",
   });
 
   const changeHandler = (
@@ -29,6 +31,7 @@ const Shipping = () => {
 
   const sumbitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    dispatch(saveShippingInfo(shippingInput));
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_SERVER}/api/payment/create`,
@@ -97,7 +100,7 @@ const Shipping = () => {
           type="number"
           placeholder="Pincode"
           name="pinCode"
-          value={shippingInput.pinCode}
+          value={shippingInput.pincode}
           onChange={changeHandler}
         />
         <button type="submit">Pay Now</button>

@@ -8,7 +8,7 @@ import {
   calculatePrice,
   discountApply,
   removeCartItem,
-} from "../redux/reducer/cardReducer";
+} from "../redux/reducer/cartReducer";
 import { CartReducerInitialState } from "../types/reducer.types";
 import { CartItem } from "../types/types";
 import axios from "axios";

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Skeleton } from "../components/Loader.component";
 import ProductCard from "../components/ProductCard.component";
 import { useLatestProductsQuery } from "../redux/api/productApi";
-import { addToCart } from "../redux/reducer/cardReducer";
+import { addToCart } from "../redux/reducer/cartReducer";
 import { CartItem } from "../types/types";
 
 const Home = () => {
