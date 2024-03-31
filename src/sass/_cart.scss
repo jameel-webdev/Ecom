@@ -1,6 +1,6 @@
 .cart {
   padding: 1.2rem;
-  @include flex(row, stretch, unset, 4rem);
+  @include flex(row, stretch, unset, 2rem);
   height: calc(100vh - 4rem);
 
   > main {
@@ -16,7 +16,7 @@
   }
 
   > aside {
-    padding: 3rem;
+    padding: 4rem;
     @include flex(column, center, stretch, 1.5rem);
     background-color: $bColor-light;
     border-radius: 20px;

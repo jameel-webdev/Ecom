@@ -60,7 +60,7 @@ const Cart = () => {
       cancel();
       setIsValidCouponCode(false);
     };
-  }, [couponCode]);
+  }, [couponCode, dispatch]);
 
   useEffect(() => {
     dispatch(calculatePrice());
@@ -103,7 +103,7 @@ const Cart = () => {
           {couponCode &&
             (isValidCouponCode ? (
               <span className="green">
-                <code>{couponCode}</code> ₹{discount} Discounted
+                <code>{couponCode}</code> 🤩🎉
               </span>
             ) : (
               <span className="red">

@@ -68,7 +68,7 @@
   }
 
   .graph-container {
-    @include flex(row, unset, unset, 2rem);
+    @include flex(row, flex-start, flex-start, 2rem);
     padding: 0 2rem 2rem 0;
     > div {
       background-color: white;
@@ -99,7 +99,7 @@
 
       > div {
         overflow-y: auto;
-        height: 40rem;
+        height: 16.7rem;
         padding-left: 0.5rem;
         &::-webkit-scrollbar {
           display: none;

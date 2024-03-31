@@ -1,4 +1,5 @@
 .home {
+  width: calc(100vw - 2.3rem);
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -50,11 +51,11 @@
 }
 
 .productcard {
-  width: 14rem;
+  width: 12rem;
   height: 18rem;
   margin: 1rem 0.5rem;
   flex: none;
-  @include flex(column, flex-start, center, 4px);
+  @include flex(column, flex-start, center, 2px);
   position: relative;
   background-color: $color1;
   border-radius: 10px;
@@ -65,8 +66,9 @@
 
   img {
     @include square(calc(15rem - 3rem));
-    object-fit: cover;
-    // margin: 1rem;
+    object-fit: fill;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 1rem;
   }
   span {
     font-weight: 700;

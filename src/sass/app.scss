@@ -70,8 +70,9 @@ a {
 /* Header */
 .header {
   @include flex(row, space-between, center, 1.2rem);
+  flex-wrap: wrap;
   font-size: 1.3rem;
-  padding: 1rem 2rem;
+  padding: 1rem;
 
   .header-menu {
     @include flex(row, center, center, 1rem);
