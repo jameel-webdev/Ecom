@@ -42,8 +42,9 @@ const Search = () => {
     dispatch(addToCart(cartItem));
     toast.success("Added to Cart");
   };
-  const isNextPage = page < 4;
+  const isNextPage = page < searchData?.totalPage!;
   const isPreviousPage = page > 1;
+
   if (isError) {
     const err = error as CustomError;
     toast.error(err.data.message);

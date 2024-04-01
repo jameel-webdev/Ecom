@@ -25,12 +25,14 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
     "react-table": "^7.8.0",
-    "sass": "^1.72.0"
+    "sass": "^1.72.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@types/react-table": "^7.7.20",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react-swc": "^3.5.0",

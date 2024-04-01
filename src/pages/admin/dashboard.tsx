@@ -1,6 +1,4 @@
 import { BiMaleFemale } from "react-icons/bi";
-import { BsSearch } from "react-icons/bs";
-import { FaRegBell } from "react-icons/fa";
 import { HiTrendingDown, HiTrendingUp } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import AdminSidebar from "../../components/admin/AdminSidebar";
@@ -10,9 +8,6 @@ import { Skeleton } from "../../components/Loader.component";
 import { useStatsQuery } from "../../redux/api/dashboardApi";
 import { RootState } from "../../redux/store";
 import { getLastMonth } from "../../utils/features";
-
-const userImg =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp";
 
 const { last6Months, last12Months } = getLastMonth();
 console.log(last6Months, last12Months);
@@ -31,13 +26,6 @@ const Dashboard = () => {
           <Skeleton />
         ) : (
           <>
-            {/* <div className="bar">
-              <BsSearch />
-              <input type="text" placeholder="Search for data, users, docs" />
-              <FaRegBell />
-              <img src={user?.photo || userImg} alt="User" />
-            </div> */}
-
             <section className="widget-container">
               <WidgetItem
                 percent={stats.changePercent.revenue}

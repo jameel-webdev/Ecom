@@ -24,6 +24,9 @@ const Home = () => {
           <p>Quick Delivery</p>
           <h4>Gateway to Gadgets Galore.</h4>
         </div>
+        <div className="coupon">
+          Coupon Code <code>HAPPYCODING</code>
+        </div>
       </section>
 
       <h2>

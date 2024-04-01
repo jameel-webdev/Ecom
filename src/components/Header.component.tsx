@@ -1,11 +1,11 @@
 import { useState } from "react";
 import {
-  FaAngleDown,
+  // FaAngleDown,
   FaSearch,
   FaShoppingCart,
   FaSignInAlt,
   FaSignOutAlt,
-  FaUser,
+  // FaUser,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { User } from "../types/types";
@@ -16,7 +16,7 @@ import toast from "react-hot-toast";
 interface PropsType {
   user: User | null;
 }
-
+const userImg = "https://avatar.iran.liara.run/username?username=username";
 const Header = ({ user }: PropsType) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   //Logout Handler
@@ -50,7 +50,7 @@ const Header = ({ user }: PropsType) => {
           {user?._id ? (
             <>
               <button onClick={() => setIsOpen(!isOpen)}>
-                <FaUser /> {user?.role} <FaAngleDown />
+                <img src={user?.photo || userImg} alt="User" />
               </button>
               <dialog open={isOpen}>
                 <div>

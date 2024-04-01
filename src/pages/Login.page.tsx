@@ -6,9 +6,9 @@ import { auth } from "../firebase";
 import { useLoginMutation } from "../redux/api/userApi";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { MessageResponse } from "../types/api-types";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  //   const [username, setUsername] = useState("");
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
   const [login] = useLoginMutation();
@@ -41,7 +41,7 @@ const Login = () => {
     <div className="login">
       <section></section>
       <main>
-        <h1 className="heading">Login</h1>
+        <h1 className="heading">Login with Google</h1>
         <div>
           <label>Gender</label>
           <select
@@ -63,9 +63,13 @@ const Login = () => {
           />
         </div>
         <div>
-          <p>Already have an account?</p>
           <button onClick={loginHandler}>
             <FcGoogle /> <span>Sign in with Google</span>
+          </button>
+          <button>
+            <Link to="/signin">
+              <span>Sign In with Email</span>
+            </Link>
           </button>
         </div>
       </main>
