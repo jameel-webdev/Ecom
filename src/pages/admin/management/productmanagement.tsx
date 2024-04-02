@@ -68,7 +68,7 @@ const Productmanagement = () => {
 
     const res = await updateProduct({
       formData,
-      userId: user._id!,
+      userId: user?._id!,
       productId: data?.singleProduct._id!,
     });
     responseToast(res, navigate, "/admin/product");
@@ -76,7 +76,7 @@ const Productmanagement = () => {
 
   const deleteHandler = async () => {
     const res = await deleteProduct({
-      userId: user._id!,
+      userId: user?._id!,
       productId: data?.singleProduct._id!,
     });
     responseToast(res, navigate, "/admin/product");

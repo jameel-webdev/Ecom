@@ -1,14 +1,13 @@
 import { ReactElement, useEffect, useState } from "react";
-import TableHOC from "../components/admin/TableHOC";
-import { Column } from "react-table";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useMyOrderQuery } from "../redux/api/orderApi";
-import { UserReducerInitialState } from "../types/reducer.types";
-import { CustomError } from "../types/api-types";
 import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Column } from "react-table";
+import TableHOC from "../components/admin/TableHOC";
 import { Skeleton } from "../components/Loader.component";
+import { useMyOrderQuery } from "../redux/api/orderApi";
 import { RootState } from "../redux/store";
+import { CustomError } from "../types/api-types";
 
 type DataType = {
   _id: string;
