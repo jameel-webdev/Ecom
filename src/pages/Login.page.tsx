@@ -6,7 +6,7 @@ import { auth } from "../firebase";
 import { useLoginMutation } from "../redux/api/userApi";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { MessageResponse } from "../types/api-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Login = () => {
   const [gender, setGender] = useState("");
@@ -66,11 +66,11 @@ const Login = () => {
           <button onClick={loginHandler}>
             <FcGoogle /> <span>Sign in with Google</span>
           </button>
-          <button>
+          {/* <button>
             <Link to="/signin">
               <span>Sign In with Email</span>
             </Link>
-          </button>
+          </button> */}
         </div>
       </main>
     </div>
