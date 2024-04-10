@@ -50,7 +50,7 @@ const App = () => {
         dispatch(userNotExist());
       }
     });
-  }, [dispatch, user]);
+  }, [dispatch]);
 
   return loading ? (
     <Loader />
